@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { Client } from '../model/client';
 import { ClientsService } from '../services/clients.service';
@@ -10,7 +11,7 @@ import { ClientsService } from '../services/clients.service';
 })
 export class ClientsComponent implements OnInit {
 
-  clients: Client[] = [];
+  clients: Observable<Client[]>;
   displayedColumns = ['name', 'address', 'phone', 'email'];
 
 

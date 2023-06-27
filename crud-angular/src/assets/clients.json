@@ -1,0 +1,4 @@
+[
+  { "_id": "1", "name": "John Doe", "address": "123 Main St", "phone": "555-555-5555", "email": "johndoe@me.com" },
+  { "_id": "2", "name": "Jane Doe", "address": "456 Main St", "phone": "555-555-5556", "email": "janedoe@me.com" }
+]

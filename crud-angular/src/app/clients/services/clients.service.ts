@@ -2,18 +2,22 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Client } from '../model/client';
+import { first, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientsService {
 
+  private readonly API = '/assets/clients.json';
+
   constructor(private httpClient: HttpClient) { }
 
-  list(): Client[] {
-    return [
-      { _id: '1', name: 'John Doe', address: '123 Main St', phone: '555-555-5555', email: 'johndoe@me.com' },
-      { _id: '2', name: 'Jane Doe', address: '456 Main St', phone: '555-555-5556', email: 'janedoe@me.com' },
-    ];
+  list() {
+    return this.httpClient.get<Client[]>(this.API)
+      .pipe(
+        first(),
+        tap(clients => console.log(clients))
+      );
   }
 }
