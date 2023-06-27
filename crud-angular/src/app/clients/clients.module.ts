@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { ClientsRoutingModule } from './clients-routing.module';
-import { ClientsComponent } from './clients/clients.component';
+import { ClientsComponent } from './component/clients.component';
 
 
 
