@@ -11,12 +11,12 @@ import { ClientsService } from '../services/clients.service';
 })
 export class ClientsComponent implements OnInit {
 
-  clients: Observable<Client[]>;
+  clients$: Observable<Client[]>;
   displayedColumns = ['name', 'address', 'phone', 'email'];
 
 
   constructor(private clientsService: ClientsService) {
-    this.clients = this.clientsService.list();
+    this.clients$ = this.clientsService.list();
   }
 
   ngOnInit(): void {
