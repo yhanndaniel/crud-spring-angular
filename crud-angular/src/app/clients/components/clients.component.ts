@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
 
 import { Client } from '../model/client';
 import { ClientsService } from '../services/clients.service';
@@ -16,7 +16,13 @@ export class ClientsComponent implements OnInit {
 
 
   constructor(private clientsService: ClientsService) {
-    this.clients$ = this.clientsService.list();
+    this.clients$ = this.clientsService.list()
+      .pipe(
+        catchError(error => {
+          console.log(error);
+          return of([]);
+        }),
+      );
   }
 
   ngOnInit(): void {
