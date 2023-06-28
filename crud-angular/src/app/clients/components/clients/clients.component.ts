@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, catchError, of } from 'rxjs';
-
-import { Client } from '../model/client';
-import { ClientsService } from '../services/clients.service';
 import { MatDialog } from '@angular/material/dialog';
+import { catchError, Observable, of } from 'rxjs';
 import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/error-dialog.component';
+
+import { Client } from '../../model/client';
+import { ClientsService } from '../../services/clients.service';
+
 
 @Component({
   selector: 'app-clients',
@@ -14,7 +15,7 @@ import { ErrorDialogComponent } from 'src/app/shared/components/error-dialog/err
 export class ClientsComponent implements OnInit {
 
   clients$: Observable<Client[]>;
-  displayedColumns = ['name', 'address', 'phone', 'email'];
+  displayedColumns = ['name', 'address', 'phone', 'email', 'actions'];
 
 
   constructor(
