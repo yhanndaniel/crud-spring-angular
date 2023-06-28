@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ClientsRoutingModule } from './clients-routing.module';
 import { ClientsComponent } from './components/clients/clients.component';
 import { ClientFormComponent } from './components/client-form/client-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,7 +19,8 @@ import { ClientFormComponent } from './components/client-form/client-form.compon
     CommonModule,
     ClientsRoutingModule,
     AppMaterialModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class ClientsModule { }
