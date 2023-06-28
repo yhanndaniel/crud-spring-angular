@@ -9,7 +9,7 @@ import { delay, first, tap } from 'rxjs';
 })
 export class ClientsService {
 
-  private readonly API = '/assets/clients.json';
+  private readonly API = 'api/clients';
 
   constructor(private httpClient: HttpClient) { }
 
